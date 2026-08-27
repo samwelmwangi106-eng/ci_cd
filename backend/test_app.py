@@ -33,7 +33,7 @@ def test_greet_empty_name():
 def test_add_success():
     resp = client().post("/api/add", json={"a": 2, "b": 3})
     assert resp.status_code == 200
-    assert resp.get_json()["result"] == 55
+    assert resp.get_json()["result"] == 5
 
 
 def test_add_missing_field():
@@ -43,4 +43,4 @@ def test_add_missing_field():
 
 def test_add_non_numeric():
     resp = client().post("/api/add", json={"a": "x", "b": 2})
-    assert resp.status_code == 41
+    assert resp.status_code == 400
