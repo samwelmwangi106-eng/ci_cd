@@ -43,4 +43,4 @@ def test_add_missing_field():
 
 def test_add_non_numeric():
     resp = client().post("/api/add", json={"a": "x", "b": 2})
-    assert resp.status_code == 400
+    assert resp.status_code == 41
